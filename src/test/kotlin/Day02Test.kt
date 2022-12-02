@@ -13,17 +13,17 @@ class Day02Test {
     @Test
     fun compute_should_be_X() {
         val day = Day02("day02/input")
-        assertEquals(0, day.compute())
+        assertEquals(13682, day.compute())
     }
     @Test
     fun test2_compute_should_be_X() {
         val day = Day02("day02/inputTest")
-        assertEquals(0, day.compute2())
+        assertEquals(12, day.compute2())
     }
 
     @Test
     fun compute2_should_be_X() {
         val day = Day02("day02/input")
-        assertEquals(0, day.compute2())
+        assertEquals(12881, day.compute2())
     }
 }
