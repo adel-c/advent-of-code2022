@@ -1,22 +1,32 @@
 class Day01(path: String = "day01/input") {
     private val inputData: List<String> = path.fromResource().readLines()
     fun compute(): Long {
-        var index =0
-        var sum=0L
+        val values = sumPerPerson()
+
+        return values.maxOf { it }
+    }
+
+    private fun sumPerPerson(): MutableList<Long> {
+        var index = 0
+        var sum = 0L
         var values = mutableListOf<Long>()
-        inputData.forEach{v->
-            if(v.isEmpty()){
+        inputData.forEach { v ->
+            if (v.isEmpty()) {
                 values.add(sum)
                 index++
-                sum=0
-            }else{
-                sum +=v.toLong()
+                sum = 0
+            } else {
+                sum += v.toLong()
             }
 
         }
-        return values.maxOf { it }
+        values.add(sum)
+        return values
     }
+
     fun compute2(): Long {
-        return 0
+        val values = sumPerPerson()
+
+        return values.sortedDescending().take(3).sum()
     }
 }
